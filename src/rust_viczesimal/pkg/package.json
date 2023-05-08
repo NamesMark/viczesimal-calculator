@@ -1,0 +1,13 @@
+{
+  "name": "rust_viczesimal",
+  "description": "Calculates viczesimal numbers",
+  "version": "1.0.0",
+  "files": [
+    "rust_viczesimal_bg.wasm",
+    "rust_viczesimal.js",
+    "rust_viczesimal.d.ts"
+  ],
+  "module": "rust_viczesimal.js",
+  "types": "rust_viczesimal.d.ts",
+  "sideEffects": false
+}
