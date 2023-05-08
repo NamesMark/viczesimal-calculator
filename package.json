@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "wasm-build": "wasm-pack build --target web src/rust_viczesimal",
-    "build": "npm run wasm-build && vite build && npm run copy-wasm",
+    "dev-build": "npm run wasm-build && vite build && npm run copy-wasm",
     "copy-wasm": "copyfiles -u 1 \"src/rust_viczesimal/pkg/*.{js,wasm}\" dist",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
