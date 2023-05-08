@@ -65,13 +65,13 @@ function passStringToWasm0(arg, malloc, realloc) {
 }
 /**
 * @param {string} vicz
-* @returns {number}
+* @returns {bigint}
 */
 export function vicz_to_dec(vicz) {
     const ptr0 = passStringToWasm0(vicz, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     const len0 = WASM_VECTOR_LEN;
     const ret = wasm.vicz_to_dec(ptr0, len0);
-    return ret >>> 0;
+    return ret;
 }
 
 let cachedInt32Memory0 = null;
@@ -91,7 +91,7 @@ function getStringFromWasm0(ptr, len) {
     return cachedTextDecoder.decode(getUint8Memory0().subarray(ptr, ptr + len));
 }
 /**
-* @param {number} decimal
+* @param {bigint} decimal
 * @returns {string}
 */
 export function dec_to_vicz(decimal) {

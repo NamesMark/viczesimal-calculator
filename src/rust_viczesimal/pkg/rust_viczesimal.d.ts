@@ -2,14 +2,14 @@
 /* eslint-disable */
 /**
 * @param {string} vicz
-* @returns {number}
+* @returns {bigint}
 */
-export function vicz_to_dec(vicz: string): number;
+export function vicz_to_dec(vicz: string): bigint;
 /**
-* @param {number} decimal
+* @param {bigint} decimal
 * @returns {string}
 */
-export function dec_to_vicz(decimal: number): string;
+export function dec_to_vicz(decimal: bigint): string;
 /**
 * @param {string} expression
 * @returns {string}
