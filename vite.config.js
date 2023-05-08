@@ -27,6 +27,8 @@ export default {
     },
   },
   build: {
+    publicPath: './',
+    assetsDir: 'assets',
     rollupOptions: {
       external: (id) => id.includes("rust_viczesimal/pkg"),
       output: {
