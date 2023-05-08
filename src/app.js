@@ -1,4 +1,4 @@
-import init, { calculate_vicz_expression } from "../dist/assets/rust_viczesimal/pkg/rust_viczesimal.js";
+import init, { calculate_vicz_expression } from "/src/rust_viczesimal/pkg/rust_viczesimal.js";
 
 
 export async function calculate_expression(expression) {
