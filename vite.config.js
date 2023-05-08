@@ -4,11 +4,11 @@ import fs from 'fs/promises';
 import path from 'path';
 
 const wasmPath = resolve(__dirname, 'src/rust_viczesimal/pkg');
-const buildWasmPath = resolve(__dirname, 'dist/rust_viczesimal/pkg');
+const buildWasmPath = resolve(__dirname, 'dist/assets/rust_viczesimal/pkg');
 
 async function copyWasmFiles() {
   const srcDir = 'src/rust_viczesimal/pkg';
-  const destDir = 'dist/rust_viczesimal/pkg';
+  const destDir = 'dist/assets/rust_viczesimal/pkg';
   const wasmFiles = ['rust_viczesimal_bg.wasm', 'rust_viczesimal.js'];
 
   await fs.mkdir(destDir, { recursive: true });
