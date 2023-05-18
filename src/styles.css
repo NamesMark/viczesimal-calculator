@@ -97,3 +97,12 @@ body {
     margin-top: 0px;
     display:block;
   }
+
+  #errorDisplay {
+    color: #d23f31;
+    font-size: 12px;
+    text-align: right;
+    margin-right:40px;
+    margin-top: -12px;
+    display:block;
+  }

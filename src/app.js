@@ -6,24 +6,37 @@ export async function calculate_expression(expression) {
     return calculate_vicz_expression(expression);
 }
 
+const errorDisplay = document.getElementById('errorDisplay');
+
 document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('input[type="button"]');
+
     let previousExpression = '';
     let previousResult = '';
   
     buttons.forEach(button => {
       button.addEventListener('click', async (e) => {
         const action = e.target.dataset.action;
- 
+        errorDisplay.innerHTML = " ";
+
         switch (action) {
             case 'calculate':
                 let currentExpression = calculator.display.value;
-                let lastOperator = currentExpression.match(/[-+*/]/g).pop();
-                let lastNumber = currentExpression.split(lastOperator).pop();
-                if (currentExpression == previousExpression) {
-                    calculator.display.value = previousResult + lastOperator + lastNumber;
-                }
+                let lastOperator = "";
+                if (currentExpression.match(/[-+*/]/g) != null) {
+                    lastOperator = currentExpression.match(/[-+*/]/g).pop();
+                    let lastNumber = currentExpression.split(lastOperator).pop();
+                    if (currentExpression == previousExpression) {
+                        calculator.display.value = previousResult + " " + lastOperator + lastNumber;
+                    }
+                }   
                 const result = await calculate_expression(calculator.display.value);
+                if (result == 'bruh') {
+                    calculator.display.value = "";
+                    errorDisplay.innerHTML = "Bruh, can't do me like that with division by zero.";
+                    calculator.resultDisplay.value = "";
+                    break;
+                }
                 calculator.resultDisplay.value = result;
                 previousExpression = calculator.display.value;
                 previousResult = result;
